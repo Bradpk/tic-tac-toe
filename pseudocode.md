@@ -74,8 +74,11 @@ END
 
 VARIABLES
 1. app (To link the HTML div element) 
+
 2. playerTurn (To state who's turn it is)
+
 3. gameCondition (To state whether somebody has won or if it is a draw) 
+
 4. gameBoard (To state whether each tile is 'empty', 'X' or 'O'
 
 FUNCTIONS
@@ -83,7 +86,12 @@ FUNCTIONS
 
 2. initGame (To set the initial state of the game display) 
 
-3. 
+3. clickAction (To control what happens when you click on the tiles) 
+
+4. checkCondition (To Check whether a player has won or if it is a draw) 
+
+5. resetGame (To revert the display back to the original state of the game with all tiles empty) 
 
 OBJECTS
+1. gameState (An Object that contains the playerTurn, gameCondition and gameBoard variables which can store overall state) 
 
