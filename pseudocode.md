@@ -56,7 +56,7 @@ The user clicks on another tile which now changes the content of the tile from e
 The process continues, with the clicks and player indicator paragraph alternating between 'X' and 'O'
 (Function)
 
-An alert will display on the page when one of three conditions is met: 
+A display on the page when become visible when one of three conditions is met: 
 Player X gets three symbols('X') in a straight line (horizontal, vertical, or diagonal). 
 Player O gets three symbols('O') in a straight line (horizontal, vertical, or diagonal). 
 All tiles have been clicked on. 
@@ -75,11 +75,15 @@ END
 VARIABLES
 1. app (To link the HTML div element) 
 
-2. playerTurn (To state who's turn it is)
+2. playerTurn (To store state on who's turn it is)
 
-3. gameCondition (To state whether somebody has won or if it is a draw) 
+3. gameCondition (To store state on whether somebody has won or if it is a draw) 
 
 4. gameBoard (To state whether each tile is 'empty', 'X' or 'O'
+
+5. displayWhosTurn (An html element that displays which players turn it is) 
+
+6. displayResult (An html element that displays whether somebody has won or if the game is a draw) 
 
 FUNCTIONS
 1. renderElements (To render all the HTML required) 
@@ -95,3 +99,6 @@ FUNCTIONS
 OBJECTS
 1. gameState (An Object that contains the playerTurn, gameCondition and gameBoard variables which can store overall state) 
 
+
+
+NOT COMPLETE
