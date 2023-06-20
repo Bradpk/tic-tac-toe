@@ -5,6 +5,7 @@ Create a webpage that recreates the childhood classic game, tic-tac-toe, using J
 For this project, we will be using JavaScript to dynamically render elements, keep track of board status, display win conditions, and manage state.
 
 MoSCoW
+
 Must: 
 1. The game should let the players know who's turn it is.
 2. Game tiles should only be clickable once, and if the game is over they should not be clickable at all.
@@ -26,8 +27,13 @@ Won't:
 1. AI playing against you 
 2. Recreate Go
 
-
+Think Through
 Functions are when something “happens” So what’s happening?
+Do these all need to be stand alone functions? Which could or should be combined? 
+Which variables could or should be combined into an object for storing state? 
+How will all these variables/functions/objects interact with each other? 
+How do they all get triggered in an order that achieves my goal?
+Gah, my brain
 
 Step By Step:
 
@@ -35,7 +41,7 @@ BEGIN
 
 User goes to the page
 
-Upon loading, the page will contain: a 3x3 display of tiles(gameboard), title('Tic Tac Toe'), paragraph('player X turn') and reset button
+Upon loading, the page will contain: a 3x3 display of tiles, title('Tic Tac Toe'), paragraph('player X turn') and reset button
 (Function)(Event Handler)
 
 User clicks on a tile which changes the content of the tile from empty to 'x'
@@ -45,9 +51,9 @@ The display of the paragraph changes to indicate ('player O turn')
 (Function) 
 
 The user clicks on another tile which now changes the content of the tile from empty to 'O'. Tiles previously clicked on cannot be clicked twice. 
-(Function) 
+(Function)(Event Handler)
 
-The process continues with the clicks and player indicator alternating between 'X' and 'O'
+The process continues, with the clicks and player indicator paragraph alternating between 'X' and 'O'
 (Function)
 
 An alert will display on the page when one of three conditions is met: 
@@ -67,8 +73,17 @@ If user wants to reset the game, they click the 'reset button' which sets the co
 END
 
 VARIABLES
+1. app (To link the HTML div element) 
+2. playerTurn (To state who's turn it is)
+3. gameCondition (To state whether somebody has won or if it is a draw) 
+4. gameBoard (To state whether each tile is 'empty', 'X' or 'O'
 
 FUNCTIONS
+1. renderElements (To render all the HTML required) 
+
+2. initGame (To set the initial state of the game display) 
+
+3. 
 
 OBJECTS
 
