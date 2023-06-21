@@ -17,7 +17,7 @@ title.textContent = 'Tic Tac Toe'
 app.appendChild(title)
 
 const playerTurnParagraph = document.createElement('p')
-playerTurnParagraph = `Player ${gameState.playerTurn} 's Turn`
+playerTurnParagraph.textContent = `Player ${gameState.playerTurn} 's Turn`
 app.appendChild(playerTurnParagraph)
 }
 
