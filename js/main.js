@@ -4,7 +4,7 @@ console.log("Test")
 // Stores player turn, tile content and game condition as object properties
 let gameState = {
     playerTurn: 'X',
-    tileContent: ' ',
+    gameBoard: ' ',
     gameCondition: 'incomplete'
 }
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -26,6 +26,16 @@ app.appendChild(playerTurnParagraph)
 const tileContainer = document.createElement('div')
 tileContainer.classList.add('row')
 app.appendChild(tileContainer)
+
+// Creates the 9 tiles that make up the gameboard
+for (let i=0; i < 9; i++) {
+    const tile = document.createElement('div')
+    tile.classList.add('col-4')
+    tile.addEventListener('click', clickAction ) // <--- Needs to call the clickAction function later on
+    tile.textContent = gameState.gameBoard[i]
+    tileContainer.appendChild(tile)
+
+}
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Sets the initial state of the game
@@ -50,7 +60,7 @@ function checkCondition() {
 
 
 //----------------------------------------------------------------------------------------------------------------------------------
-// Wait, all this is going to do is call the startGame function. What is even the point of this function? 
+// Wait, all this is going to do is call the startGame function. What is even the point of this function??
 function resetGame() {
 
 }
