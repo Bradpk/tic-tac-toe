@@ -80,6 +80,8 @@ IF all tiles are clicked on without either player X or Player O getting three in
 
 END
 
+Surely I have over complicated this? It feels like 3d sudoku
+
 VARIABLES
 1. app (To link the HTML div element) 
 
