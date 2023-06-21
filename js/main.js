@@ -4,11 +4,11 @@ console.log("Test")
 // Stores player turn, tile content and game condition as object properties
 let gameState = {
     playerTurn: 'X',
-    gameBoard: ' ',
+    gameBoard: ['', '', '', '', '', '', '', '', ''],
     gameCondition: 'incomplete'
 }
 //----------------------------------------------------------------------------------------------------------------------------------
-// Create and render all the HTML elements needed
+// Creates and renders all the HTML elements needed
 function renderElements() {
 const app = document.getElementById('app')
 
@@ -36,19 +36,24 @@ for (let i=0; i < 9; i++) {
     tileContainer.appendChild(tile)
 }
 
+// Creates the paragraph that indicates the game result
 const gameResultParagraph = document.createElement('p')
 gameResultParagraph.textContent = '' //<--- Needs to display who won later on
 app.appendChild(gameResultParagraph)
 
+// Creates the Reset Button
 const resetButton = document.createElement('button')
 resetButton.textContent = "Reset Game"
-resetButton.addEventListener('click', startGame)
+resetButton.addEventListener('click', startGame) //<--- Check this later on 
 app.appendChild(resetButton)
 }
 //----------------------------------------------------------------------------------------------------------------------------------
-// Sets the initial state of the game
+// Sets the initial state of the game 
 function startGame() {
-
+    gameState.playerTurn = 'X'
+    gameState.gameBoard = ['', '', '', '', '', '', '', '', '']
+    gameState.gameCondition = 'incomplete'
+    renderElements()
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Controls what happens when you click on the tiles
