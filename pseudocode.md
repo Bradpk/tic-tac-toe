@@ -63,20 +63,22 @@ User goes to the page
 5. The process continues, with the clicks and player indicator paragraph alternating between 'X' and 'O'
 (This should already be the case from the functions mentioned in steps 2 and 3. 
 
-6. A display on the page when become visible when one of three conditions is met: 
+6. A display on the page becomes visible when one of three conditions is met: 
 Player X gets three symbols('X') in a straight line (horizontal, vertical, or diagonal). 
 Player O gets three symbols('O') in a straight line (horizontal, vertical, or diagonal). 
 All tiles have been clicked on. 
 (This will be done with a function that checks if a winning condition is met based off the index of an array that corrisponds to the tiles lining up in a specific way) 
-(If it does then it updates the object property that tracks the game condition e.g win, draw) 
+(If it does then it updates the object property that tracks the game condition e.g win, draw)
+(If the game condition changes it triggers a content change of another paragraph that displays who has won on the screen) 
 
-7. IF Player X gets three in a straight line. Alert says 'Player X Won!' 
+8. IF Player X gets three in a straight line. Alert says 'Player X Won!' 
 IF Player O gets three in a straight line. Alert says 'Plater O Won!'
 IF all tiles are clicked on without either player X or Player O getting three in a straight line, then alert says 'Draw!'
 (This conditional would be included in the function from step 6)
 
-8. If user wants to reset the game, they click the 'reset button' which sets the content of the tiles back to empty and defaults to player x turn. 
-(Inside the function that renders the html elements, an event listener can be attached to the reset button element and the function that sets the inital state of the page can be passed into it. 
+9. If user wants to reset the game, they click the 'reset button' which sets the content of the tiles back to empty and defaults to player x turn. 
+(Inside the function that renders the html elements, an event listener can be attached to the reset button element and the function that sets the inital state of the page can be passed into it)
+(Or maybe its not a good idea to have the click handler inside the function? In which case make the click handler on its on)  
 
 END
 
@@ -112,16 +114,21 @@ FUNCTIONS
   functions called: checkCondition, renderElements
   IF tile string is empty and gameCondition is not won or drawn 
   THEN tile content is equal to playerTurn content. 
-  Player turn alternates to X if it currently O or O if it is currently X
 
-4. switchPlayer (A function to alternate between player x and player o after each click) 
+4. switchPlayer (A function to alternate between player x and player o after each click)
+   Player turn alternates to X if it currently O or O if it is currently X
 
 5. checkCondition (To Check whether a player has won or if it is a draw) 
 
-6. resetGame (To revert the display back to the original state of the game with all tiles empty) 
+6. resetGame (To revert the display back to the original state of the game with all tiles empty)
+   Just needs to call the initGame function inside a click handler
 
 OBJECTS
-1. gameState (An Object that contains the playerTurn, gameCondition and gameBoard variables which can store overall state) 
+1. gameState (An Object that contains the playerTurn, gameCondition and gameBoard variables which can store state while the game progresses) 
+
+
+
+
 
 
 
