@@ -17,9 +17,15 @@ const title = document.createElement('hi')
 title.textContent = 'Tic Tac Toe'
 app.appendChild(title)
 
+// Creates the paragraph that indicates whos turn it is
 const playerTurnParagraph = document.createElement('p')
 playerTurnParagraph.textContent = `Player ${gameState.playerTurn} 's Turn`
 app.appendChild(playerTurnParagraph)
+
+// Creates a div with a class of 'row' 
+const tileContainer = document.createElement('div')
+tileContainer.classList.add('row')
+app.appendChild(tileContainer)
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Sets the initial state of the game
