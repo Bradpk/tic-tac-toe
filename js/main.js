@@ -44,12 +44,12 @@ app.appendChild(gameResultParagraph)
 // Creates the Reset Button
 const resetButton = document.createElement('button')
 resetButton.textContent = "Reset Game"
-resetButton.addEventListener('click', startGame) //<--- Check this later on 
+resetButton.addEventListener('click', initGame) //<--- Check this later on 
 app.appendChild(resetButton)
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Sets the initial state of the game 
-function startGame() {
+function initGame() {
     gameState.playerTurn = 'X'
     gameState.gameBoard = ['', '', '', '', '', '', '', '', '']
     gameState.gameCondition = 'incomplete'
@@ -63,7 +63,11 @@ function clickAction() {
 //----------------------------------------------------------------------------------------------------------------------------------
 // Switches the player symbol. 
 function switchPlayer() {
-
+if (gameState.playerTurn === 'X'){
+    gameState.playerTurn = 'O'
+} else {
+    gameState.playerTurn = 'X'
+}
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Checks whether game is a win, draw or incomplete
@@ -73,9 +77,9 @@ function checkCondition() {
 
 
 //----------------------------------------------------------------------------------------------------------------------------------
-// Wait, all this is going to do is call the startGame function. What is even the point of this function??
+// Wait, all this is going to do is call the initGame function. What is even the point of this function, this is dumb??
 function resetGame() {
-
+initGame()
 }
 
 

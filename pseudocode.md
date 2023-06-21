@@ -92,7 +92,7 @@ Surely I have over complicated this? It feels like 3d sudoku<br>
 
 3. gameCondition (To store whether somebody has won or if it is a draw) <br>
 
-4. gameBoard (To store whether each tile is 'empty', 'X' or 'O'<br>
+4. gameBoard (To store whether each tile is 'empty', 'X' or 'O')<br>
 
 5. displayWhosTurn (An html element that displays which players turn it is) <br>
 
