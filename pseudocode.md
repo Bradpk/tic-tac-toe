@@ -114,9 +114,11 @@ FUNCTIONS
   THEN tile content is equal to playerTurn content. 
   Player turn alternates to X if it currently O or O if it is currently X
 
-4. checkCondition (To Check whether a player has won or if it is a draw) 
+4. switchPlayer (A function to alternate between player x and player o after each click) 
 
-5. resetGame (To revert the display back to the original state of the game with all tiles empty) 
+5. checkCondition (To Check whether a player has won or if it is a draw) 
+
+6. resetGame (To revert the display back to the original state of the game with all tiles empty) 
 
 OBJECTS
 1. gameState (An Object that contains the playerTurn, gameCondition and gameBoard variables which can store overall state) 
