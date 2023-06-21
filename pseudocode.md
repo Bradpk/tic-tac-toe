@@ -44,14 +44,14 @@ User goes to the page<br>
 1. The page will initially contain: A 3x3 display of tiles, title('Tic Tac Toe'), paragraph('player X turn') and reset button<br>
 (These elements will be created inside a function)<br>
 (The elements will be rendered by calling that function)<br>
-(The inital state of the page will have each tile equal to an empty string that can be stored as an array, and the current player equal to 'X')<br>
-(The inital state of the page will be stored in a function and called in the event handler of the reset button) <br>
+(The initial state of the page will have each tile equal to an empty string that can be stored as an array, and the current player equal to 'X')<br>
+(The initial state of the page will be stored in a function and called in the event handler of the reset button) <br>
 (An object will be used to store the changing state as the game progresses, it will keep track of whos turn it is, the content of each tile, and if a winning condition has been met, using key value pairs) 
 (The object property values can be changed when needed using .notation) 
 
 2. User clicks on a tile, which changes the content of that tile from an empty string to 'x'
 (This can be done with a function that sets the content of the tile clicked on to be equal to the property that keeps track of whos turn it is, from the object)
-(It will need to be used in the rendering function so that it is visbile to the user) 
+(It will need to be used in the rendering function so that it is visible to the user) 
 
 3. The display of the paragraph changes to indicate ('player O turn')
 (This can be done with a function that changes the object property that tracks which players turn it is, by switching it to O if its currently X and vice versa)
@@ -64,7 +64,7 @@ inside the event handler itself or inside a function that is called from within 
 5. The process continues, with the clicks and player indicator paragraph alternating between 'X' and 'O'<br>
 (This should already be the case from the functions mentioned in steps 2 and 3. <br>
 
-6. A display on the page becomes visible when one of three conditions is met: <br>
+6. A paragraph display on the page becomes visible when one of three conditions is met: <br>
 Player X gets three symbols('X') in a straight line (horizontal, vertical, or diagonal). <br>
 Player O gets three symbols('O') in a straight line (horizontal, vertical, or diagonal). <br>
 All tiles have been clicked on. <br>
@@ -72,9 +72,9 @@ All tiles have been clicked on. <br>
 (If it does then it updates the object property that tracks the game condition e.g win, draw)<br>
 (If the game condition changes it triggers a content change of another paragraph that displays who has won on the screen) <br>
 
-8. IF Player X gets three in a straight line. Alert says 'Player X Won!' <br>
-IF Player O gets three in a straight line. Alert says 'Plater O Won!'<br>
-IF all tiles are clicked on without either player X or Player O getting three in a straight line, then alert says 'Draw!'<br>
+8. IF Player X gets three in a straight line. Paragraph says 'Player X Won!' <br>
+IF Player O gets three in a straight line. Paragraph says 'Player O Won!'<br>
+IF all tiles are clicked on without either player X or Player O getting three in a straight line, then paragraph says 'Draw!'<br>
 (This conditional would be included in the function from step 6)<br>
 
 9. If user wants to reset the game, they click the 'reset button' which sets the content of the tiles back to empty and defaults to player x turn. <br>
