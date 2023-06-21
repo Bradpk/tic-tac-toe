@@ -34,8 +34,16 @@ for (let i=0; i < 9; i++) {
     tile.addEventListener('click', clickAction ) // <--- Needs to call the clickAction function later on
     tile.textContent = gameState.gameBoard[i]
     tileContainer.appendChild(tile)
-
 }
+
+const gameResultParagraph = document.createElement('p')
+gameResultParagraph.textContent = '' //<--- Needs to display who won later on
+app.appendChild(gameResultParagraph)
+
+const resetButton = document.createElement('button')
+resetButton.textContent = "Reset Game"
+resetButton.addEventListener('click', startGame)
+app.appendChild(resetButton)
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Sets the initial state of the game
