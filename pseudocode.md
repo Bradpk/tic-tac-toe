@@ -42,15 +42,15 @@ BEGIN
 User goes to the page
 
 1. The page will initially contain: A 3x3 display of tiles, title('Tic Tac Toe'), paragraph('player X turn') and reset button
-(These elements will be created using a function)
+(These elements will be created inside a function)
 (The elements will be rendered by calling that function)
-(The inital state of the page will have each tile equal to an empty string, and the current player equal to 'X')
+(The inital state of the page will have each tile equal to an empty string that can be stored as an array, and the current player equal to 'X')
 (The inital state of the page will be stored in a function and called in the event handler of the reset button) 
-(An object will be used to store the changing state as the game progresses, it will keep track of whos turn it is, what each tile contains, and if a winning condition has been met, using key value pairs) 
+(An object will be used to store the changing state as the game progresses, it will keep track of whos turn it is, the content of each tile, and if a winning condition has been met, using key value pairs) 
 (The object property values can be changed when needed using .notation) 
 
-2. User clicks on a tile which changes the content of the tile from empty to 'x'
-(This can be done with a function that sets the content of the tile clicked on to be equal to the property that keeps track of the whos turn it is, from the object)
+2. User clicks on a tile, which changes the content of that tile from an empty string to 'x'
+(This can be done with a function that sets the content of the tile clicked on to be equal to the property that keeps track of whos turn it is, from the object)
 (It will need to be used in the rendering function so that it is visbile to the user) 
 
 3. The display of the paragraph changes to indicate ('player O turn')
@@ -101,10 +101,18 @@ VARIABLES
 
 FUNCTIONS
 1. renderElements (To render all the HTML required) 
+  variables: app, tiles, playerTurn, gameConditionMessage, resetButton
 
 2. initGame (To set the initial state of the game display) 
+  variables: playerTurn, gameBoard, gameCondition
+  functions called: renderElements
 
 3. clickAction (To control what happens when you click on the tiles) 
+  variables: playerTurn, gameBoard, gameCondition
+  functions called: checkCondition, renderElements
+  IF tile string is empty and gameCondition is not won or drawn 
+  THEN tile content is equal to playerTurn content. 
+  Player turn alternates to X if it currently O or O if it is currently X
 
 4. checkCondition (To Check whether a player has won or if it is a draw) 
 
