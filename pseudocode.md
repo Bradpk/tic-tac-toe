@@ -41,17 +41,24 @@ BEGIN
 
 User goes to the page
 
-Upon loading, the page will contain: a 3x3 display of tiles, title('Tic Tac Toe'), paragraph('player X turn') and reset button
-(Function)(Event Handler)
+1. The page will initially contain: A 3x3 display of tiles, title('Tic Tac Toe'), paragraph('player X turn') and reset button
+(These elements will be created using a function)
+(The elements will be rendered by calling that function)
+(The inital state of the page will have each tile equal to an empty string, and the current player equal to 'X')
+(The inital state of the page will be stored in a function and called in the event handler of the reset button) 
+(An object will be used to store the changing state as the game progresses, it will keep track of whos turn it is, what each tile contains, and if a winning condition has been met, using key value pairs) 
+(The object property values can be changed when needed using .notation) 
 
-User clicks on a tile which changes the content of the tile from empty to 'x'
-(Function)(Event Handler) 
+2. User clicks on a tile which changes the content of the tile from empty to 'x'
+(This can be done with a function that sets the content of the tile clicked on to be equal to the property that keeps track of the whos turn it is, from the object)
+(It will need to be used in the rendering function so that it is visbile to the user) 
 
-The display of the paragraph changes to indicate ('player O turn')
-(Function) 
+3. The display of the paragraph changes to indicate ('player O turn')
+(This can be done with a function that changes the object property that tracks which players turn it is, by switching it to O if its currently X and vice versa)
+(This also will need to be used in the rendering function so that it is visible to the user) 
 
-The user clicks on another tile which now changes the content of the tile from empty to 'O'. Tiles previously clicked on cannot be clicked twice. 
-(Function)(Event Handler)
+4. The user clicks on another tile which now changes the content of the tile from empty to 'O'. Tiles previously clicked on cannot be clicked twice. 
+(This should already be handled by using the same function from step 2.)(
 
 The process continues, with the clicks and player indicator paragraph alternating between 'X' and 'O'
 (Function)
@@ -75,15 +82,19 @@ END
 VARIABLES
 1. app (To link the HTML div element) 
 
-2. playerTurn (To store state on who's turn it is)
+2. playerTurn (To store who's turn it is)
 
-3. gameCondition (To store state on whether somebody has won or if it is a draw) 
+3. gameCondition (To store whether somebody has won or if it is a draw) 
 
-4. gameBoard (To state whether each tile is 'empty', 'X' or 'O'
+4. gameBoard (To store whether each tile is 'empty', 'X' or 'O'
 
 5. displayWhosTurn (An html element that displays which players turn it is) 
 
 6. displayResult (An html element that displays whether somebody has won or if the game is a draw) 
+
+7. resetButton (To reinitialize the gameboard once game is over)
+
+8. winningCombinations (An array to store all the ways a player could win) 
 
 FUNCTIONS
 1. renderElements (To render all the HTML required) 
