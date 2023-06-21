@@ -57,25 +57,26 @@ User goes to the page
 (This can be done with a function that changes the object property that tracks which players turn it is, by switching it to O if its currently X and vice versa)
 (This also will need to be used in the rendering function so that it is visible to the user) 
 
-4. The user clicks on another tile which now changes the content of the tile from empty to 'O'. Tiles previously clicked on cannot be clicked twice. 
-(This should already be handled by using the same function from step 2.)(
+4. The user clicks on another tile which now changes the content of the tile from empty to 'O'. Previously clicked on cannot be clicked twice. 
+(This should already be handled by using the same function from step 2.)(Previous tiles not being abled to be clicked on could be used as either a condition inside the event handler itself or inside a function that is called from within the click handler) 
 
-The process continues, with the clicks and player indicator paragraph alternating between 'X' and 'O'
-(Function)
+5. The process continues, with the clicks and player indicator paragraph alternating between 'X' and 'O'
+(This should already be the case from the functions mentioned in steps 2 and 3. 
 
-A display on the page when become visible when one of three conditions is met: 
+6. A display on the page when become visible when one of three conditions is met: 
 Player X gets three symbols('X') in a straight line (horizontal, vertical, or diagonal). 
 Player O gets three symbols('O') in a straight line (horizontal, vertical, or diagonal). 
 All tiles have been clicked on. 
-(Function) 
+(This will be done with a function that checks if a winning condition is met based off the index of an array that corrisponds to the tiles lining up in a specific way) 
+(If it does then it updates the object property that tracks the game condition e.g win, draw) 
 
-IF Player X gets three in a straight line. Alert says 'Player X Won!' 
+7. IF Player X gets three in a straight line. Alert says 'Player X Won!' 
 IF Player O gets three in a straight line. Alert says 'Plater O Won!'
 IF all tiles are clicked on without either player X or Player O getting three in a straight line, then alert says 'Draw!'
-(Function)
+(This conditional would be included in the function from step 6)
 
-If user wants to reset the game, they click the 'reset button' which sets the content of the tiles back to empty and defaults to player x turn. 
-(Function)
+8. If user wants to reset the game, they click the 'reset button' which sets the content of the tiles back to empty and defaults to player x turn. 
+(Inside the function that renders the html elements, an event listener can be attached to the reset button element and the function that sets the inital state of the page can be passed into it. 
 
 END
 
