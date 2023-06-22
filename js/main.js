@@ -80,28 +80,10 @@ function checkCondition() {
 //    [0,4,9],[2,4,6]
 // ]
 }
-
-
 //----------------------------------------------------------------------------------------------------------------------------------
 // Wait, all this is going to do is call the initGame function. What is even the point of this function, this is dumb??
 //function resetGame() {
 //initGame()
 //}
-
-
-
-
 //----------------------------------------------------------------------------------------------------------------------------------
 initGame()
-
-
-
-
-
-
-
-
-
-
-// Could make all the functions stand alone which result in having to call the functions more within other functions?
-// Or I could combine them into larger functions?
