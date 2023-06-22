@@ -39,7 +39,7 @@ for (let i=0; i < 9; i++) {
 
 // Creates the paragraph that indicates the game result
 const gameResultParagraph = document.createElement('p')
-gameResultParagraph.textContent = `Player ${gameState.playerTurn}'s turn` //<--- Needs to display who won later on
+gameResultParagraph.textContent = '' //<--- Needs to display who won later on
 app.appendChild(gameResultParagraph)
 
 // Creates the Reset Button
