@@ -9,8 +9,9 @@ let gameState = {
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Creates and renders all the HTML elements needed
-window.onload = function renderElements() {
+function renderElements() {
 const app = document.getElementById('app')
+app.innerHTML = ''
 
 // Creates the Title
 const title = document.createElement('h1')
@@ -30,21 +31,21 @@ app.appendChild(tileContainer)
 // Creates the 9 tiles that make up the gameboard
 for (let i=0; i < 9; i++) {
     const tile = document.createElement('div')
-    tile.classList.add('col-4')
-    tile.addEventListener('click', clickAction ) // <--- Needs to call the clickAction function later on
+    tile.className = 'col-4'
     tile.textContent = gameState.gameBoard[i]
+    tile.addEventListener('click', () => clickAction(i)) 
     tileContainer.appendChild(tile)
 }
 
 // Creates the paragraph that indicates the game result
 const gameResultParagraph = document.createElement('p')
-gameResultParagraph.textContent = '' //<--- Needs to display who won later on
+gameResultParagraph.textContent = `Player ${gameState.playerTurn}'s turn` //<--- Needs to display who won later on
 app.appendChild(gameResultParagraph)
 
 // Creates the Reset Button
 const resetButton = document.createElement('button')
 resetButton.textContent = "Reset Game"
-resetButton.addEventListener('click', initGame) //<--- Check this later on 
+resetButton.addEventListener('click', initGame) 
 app.appendChild(resetButton)
 }
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -53,38 +54,39 @@ function initGame() {
     gameState.playerTurn = 'X'
     gameState.gameBoard = ['', '', '', '', '', '', '', '', '']
     gameState.gameCondition = 'incomplete'
-    
+    renderElements()
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Controls what happens when you click on the tiles
-function clickAction() {
-//if (gameState.gameBoard[]) <--- Check this 
+function clickAction(tileIndex) {
+if (gameState.gameBoard[tileIndex] === '' && gameState.gameCondition === 'incomplete') {
+    gameState.gameBoard[tileIndex] = gameState.playerTurn
+    //checkCondition() <--- Isn't complete
+    switchPlayer()
+    renderElements()
+}
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Switches the player symbol. 
 function switchPlayer() {
-if (gameState.playerTurn === 'X'){
-    gameState.playerTurn = 'O'
-} else {
-    gameState.playerTurn = 'X'
-}
+gameState.playerTurn = gameState.playerTurn === 'X' ? 'O' : 'X'
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Checks whether game is a win, draw or incomplete
 function checkCondition() {
-const winningCombinations = [
-    [0,1,2],[3,4,5],[6,7,8],
-    [0,3,6],[1,4,7],[2,5,8],
-    [0,4,9],[2,4,6]
-]
+//const winningCombinations = [
+//    [0,1,2],[3,4,5],[6,7,8],
+//    [0,3,6],[1,4,7],[2,5,8],
+//    [0,4,9],[2,4,6]
+// ]
 }
 
 
 //----------------------------------------------------------------------------------------------------------------------------------
 // Wait, all this is going to do is call the initGame function. What is even the point of this function, this is dumb??
-function resetGame() {
-initGame()
-}
+//function resetGame() {
+//initGame()
+//}
 
 
 
