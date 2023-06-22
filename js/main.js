@@ -31,7 +31,7 @@ app.appendChild(tileContainer)
 for (let i=0; i < 9; i++) {
     const tile = document.createElement('div')
     tile.classList.add('col-4')
-    tile.addEventListener('click', clickAction) // <--- Needs to call the clickAction function later on
+    tile.addEventListener('click', clickAction ) // <--- Needs to call the clickAction function later on
     tile.textContent = gameState.gameBoard[i]
     tileContainer.appendChild(tile)
 }
@@ -44,7 +44,7 @@ app.appendChild(gameResultParagraph)
 // Creates the Reset Button
 const resetButton = document.createElement('button')
 resetButton.textContent = "Reset Game"
-resetButton.addEventListener('click', resetButton) //<--- Check this later on 
+resetButton.addEventListener('click', initGame) //<--- Check this later on 
 app.appendChild(resetButton)
 }
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -57,9 +57,9 @@ function initGame() {
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Controls what happens when you click on the tiles
-//function clickAction() {
-//if (gameState.gameBoard[])
-//}
+function clickAction() {
+//if (gameState.gameBoard[]) <--- Check this 
+}
 //----------------------------------------------------------------------------------------------------------------------------------
 // Switches the player symbol. 
 function switchPlayer() {
@@ -91,7 +91,6 @@ initGame()
 
 //----------------------------------------------------------------------------------------------------------------------------------
 initGame()
-renderElements()
 
 
 
@@ -100,6 +99,7 @@ renderElements()
 
 
 
-// Where the flip did my gameBoard go?
+
+
 // Could make all the functions stand alone which result in having to call the functions more within other functions?
 // Or I could combine them into larger functions?
