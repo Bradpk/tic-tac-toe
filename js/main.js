@@ -69,7 +69,11 @@ if (gameState.gameBoard[tileIndex] === '' && gameState.gameCondition === 'incomp
 //----------------------------------------------------------------------------------------------------------------------------------
 // Switches the player symbol. 
 function switchPlayer() {
-gameState.playerTurn = gameState.playerTurn === 'X' ? 'O' : 'X'
+if (gameState.playerTurn === 'X') {
+    gameState.playerTurn = 'O'
+} else {
+gameState.playerTurn = 'X'
+}
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Checks whether game is a win, draw or incomplete (Congrats you suck)
