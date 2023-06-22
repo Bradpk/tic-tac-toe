@@ -80,7 +80,7 @@ function checkCondition() {
 //    [0,4,9],[2,4,6]
 // ]
 // for(let i = 0; i < winningCombinations.length; i++) {
-
+// Some kind of IF statement goes next
 // }
 }
 //----------------------------------------------------------------------------------------------------------------------------------
