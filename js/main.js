@@ -9,7 +9,7 @@ let gameState = {
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Creates and renders all the HTML elements needed
-function renderElements() {
+window.onload = function renderElements() {
 const app = document.getElementById('app')
 
 // Creates the Title
@@ -53,7 +53,7 @@ function initGame() {
     gameState.playerTurn = 'X'
     gameState.gameBoard = ['', '', '', '', '', '', '', '', '']
     gameState.gameCondition = 'incomplete'
-    renderElements()
+    
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Controls what happens when you click on the tiles
