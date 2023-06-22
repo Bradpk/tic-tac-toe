@@ -18,13 +18,14 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
     text-align: center;
     display: inline-block;
     vertical-align: middle;
-    border: 2px solid #000;
+    border: 2px solid rgb(0, 0, 40);
     cursor: pointer;
 }
-
 
 
 button{
     border-radius: 10%;
     height: 50px;
+    color: rgb(248, 241, 232);
+    background-color: rgb(0, 0, 40);
 }
