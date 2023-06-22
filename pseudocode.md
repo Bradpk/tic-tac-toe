@@ -47,7 +47,6 @@ User goes to the page<br>
 (The initial state of the page will have each tile equal to an empty string that can be stored as an array, and the current player equal to 'X')<br>
 (The initial state of the page will be stored in a function and called in the event handler of the reset button) <br>
 (An object will be used to store the changing state as the game progresses, it will keep track of whos turn it is, the content of each tile, and if a winning condition has been met, using key value pairs) 
-(The object property values can be changed when needed using .notation) 
 
 2. User clicks on a tile, which changes the content of that tile from an empty string to 'x'
 (This can be done with a function that sets the content of the tile clicked on to be equal to the property that keeps track of whos turn it is, from the object)
@@ -62,7 +61,7 @@ User goes to the page<br>
 inside the event handler itself or inside a function that is called from within the click handler) <br>
 
 5. The process continues, with the clicks and player indicator paragraph alternating between 'X' and 'O'<br>
-(This should already be the case from the functions mentioned in steps 2 and 3. <br>
+(This should already be the case from the functions mentioned in steps 2 and 3.) <br>
 
 6. A paragraph display on the page becomes visible when one of three conditions is met: <br>
 Player X gets three symbols('X') in a straight line (horizontal, vertical, or diagonal). <br>
@@ -79,7 +78,7 @@ IF all tiles are clicked on without either player X or Player O getting three in
 
 9. If user wants to reset the game, they click the 'reset button' which sets the content of the tiles back to empty and defaults to player x turn. <br>
 (Inside the function that renders the html elements, an event listener can be attached to the reset button element, the function that sets the inital state of the page can be passed into it)<br>
-(Or maybe its not a good idea to have the click handler inside the function? In which case make the click handler on its on)  <br>
+(Or maybe its not a good idea to have the click handler inside the function? In which case make the click handler on its on?)  <br>
 
 END<br>
 
@@ -129,7 +128,7 @@ Surely I have over complicated this? It feels like 3d sudoku<br>
    // IF 'X' OR 'O' line up in one of those orders then game condition is set to win<br>
    // IF all tiles are not an empty string then game condition is set to draw <br>
    // IF gameCondition is set to win it changes the text.content of the html element to 'X Wins!" or "O Wins!'<br>
-   // IF gamecondition is set to win it changes the text.content of the html elemetn to 'It was a draw!'<br>
+   // IF gamecondition is set to draw it changes the text.content of the html elemetn to 'It was a draw!'<br>
 
 6. resetGame (To revert the display back to the original state of the game with all tiles empty)<br>
    // Just needs to call the initGame function inside a click handler<br>
