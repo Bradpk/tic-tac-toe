@@ -72,13 +72,16 @@ function switchPlayer() {
 gameState.playerTurn = gameState.playerTurn === 'X' ? 'O' : 'X'
 }
 //----------------------------------------------------------------------------------------------------------------------------------
-// Checks whether game is a win, draw or incomplete
+// Checks whether game is a win, draw or incomplete (Congrats you suck)
 function checkCondition() {
 //const winningCombinations = [
 //    [0,1,2],[3,4,5],[6,7,8],
 //    [0,3,6],[1,4,7],[2,5,8],
 //    [0,4,9],[2,4,6]
 // ]
+// for(let i = 0; i < winningCombinations.length; i++) {
+
+// }
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Wait, all this is going to do is call the initGame function. What is even the point of this function, this is dumb??
