@@ -5,15 +5,20 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
 
 #app {
     color:rgb(0, 0, 40);
-    width: 20%;
-    margin:1%;
+    width: 40%;
+    margin-left: 5%;
+    margin-top: 1%;
+    text-align: center;
 }
 
 .col-4 {
-    width: 100px;
-    height: 100px;
+    width: 210px;
+    height: 210px;
     font: size 25px;
-    text-align: center;
-    line-height: 100px;
-    border: 1px solid #000;
+    border: 2px solid #000;
+}
+
+button{
+    border-radius: 10%;
+    height: 50px;
 }
