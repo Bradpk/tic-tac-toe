@@ -13,7 +13,7 @@ function renderElements() {
 const app = document.getElementById('app')
 
 // Creates the Title
-const title = document.createElement('hi')
+const title = document.createElement('h1')
 title.textContent = 'Tic Tac Toe'
 app.appendChild(title)
 
@@ -44,7 +44,7 @@ app.appendChild(gameResultParagraph)
 // Creates the Reset Button
 const resetButton = document.createElement('button')
 resetButton.textContent = "Reset Game"
-resetButton.addEventListener('click', ) //<--- Check this later on 
+resetButton.addEventListener('click', resetButton) //<--- Check this later on 
 app.appendChild(resetButton)
 }
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -91,6 +91,7 @@ initGame()
 
 //----------------------------------------------------------------------------------------------------------------------------------
 initGame()
+renderElements()
 
 
 
@@ -99,7 +100,6 @@ initGame()
 
 
 
-
-
+// Where the flip did my gameBoard go?
 // Could make all the functions stand alone which result in having to call the functions more within other functions?
 // Or I could combine them into larger functions?
