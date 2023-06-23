@@ -66,8 +66,10 @@ function clickAction(tileIndex) {
     if (gameState.gameBoard[tileIndex] === '' && gameState.gameCondition === 'incomplete') {
         gameState.gameBoard[tileIndex] = gameState.playerTurn
         checkCondition()
-        switchPlayer()
         renderElements()
+        switchPlayer()
+
+
     }
 }
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -88,13 +90,17 @@ function checkCondition() { //
         [0, 4, 9], [2, 4, 6]
     ]
     for (let i = 0; i < winningCombinations.length; i++) {
-        const combinations = winningCombinations[i]
-  /*      if () { //<--- Not Completed, Check Later On
+        const [a, b, c] = winningCombinations[i]
+        if (gameState.gameBoard[a] === gameState.gameBoard[b] &&
+            gameState.gameBoard[b] === gameState.gameBoard[c] &&
+            gameState.gameBoard[a] !== ''
+        ) {
             gameState.gameCondition = 'win'
-            return
-        } else if (!gameState.gameBoard === '') {
+
+
+        } else if (!gameState.gameBoard.includes('')) {
             gameState.gameCondition = 'draw'
-        } */
+        }
     }
 }
 //----------------------------------------------------------------------------------------------------------------------------------
