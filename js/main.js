@@ -39,16 +39,16 @@ for (let i=0; i < 9; i++) {
 
 // Creates the paragraph that indicates the game result
 const gameResultParagraph = document.createElement('p')
-if (gameState.gamecondition === 'win') {
-    gameResultParagraph.textContent = `Player ${gameState.playerTurn} wins!` //<--- Check this later
-} else if (gameState.gamecondition === 'draw') {
+if (gameState.gameCondition === 'win') { //<---Check this section later. win and draw not defined yet
+    gameResultParagraph.textContent = `Player ${gameState.playerTurn} wins!`
+} else if (gameState.gameCondition === 'draw') {
     gameResultParagraph.textContent = 'It\'s a draw!'
 }
 app.appendChild(gameResultParagraph)
 
 // Creates the Reset Button
 const resetButton = document.createElement('button')
-resetButton.textContent = "Reset Game"
+resetButton.textContent = 'Reset Game'
 resetButton.addEventListener('click', initGame) 
 app.appendChild(resetButton)
 }
@@ -65,7 +65,7 @@ function initGame() {
 function clickAction(tileIndex) {
 if (gameState.gameBoard[tileIndex] === '' && gameState.gameCondition === 'incomplete') {
     gameState.gameBoard[tileIndex] = gameState.playerTurn
-    //checkCondition() <--- Isn't complete
+    checkCondition() //<--- Isn't complete
     switchPlayer()
     renderElements()
 }
@@ -91,10 +91,5 @@ function checkCondition() {
 //  const combinations = winningCombinations[i]
 // }
 }
-//----------------------------------------------------------------------------------------------------------------------------------
-// Wait, all this is going to do is call the initGame function. What is even the point of this function, this is dumb??
-//function resetGame() {
-//initGame()
-//}
 //----------------------------------------------------------------------------------------------------------------------------------
 initGame()
