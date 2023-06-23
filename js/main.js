@@ -89,7 +89,7 @@ function checkCondition() { //
     ]
     for (let i = 0; i < winningCombinations.length; i++) {
         const combinations = winningCombinations[i]
-  /*      if () { //<--- Not Completed, Check Later On
+  /*      if () { //<--- Not Completed, Check Later On (Needs to compare the gameboard with the winning combinations)
             gameState.gameCondition = 'win'
             return
         } else if (!gameState.gameBoard === '') {
