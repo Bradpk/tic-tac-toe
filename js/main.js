@@ -81,7 +81,7 @@ function switchPlayer() {
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Checks whether game is a win, draw or incomplete (Congrats you suck)
-function checkCondition() { //<--- Not Completed, Check Later On
+function checkCondition() { //
     const winningCombinations = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],
         [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -89,6 +89,12 @@ function checkCondition() { //<--- Not Completed, Check Later On
     ]
     for (let i = 0; i < winningCombinations.length; i++) {
         const combinations = winningCombinations[i]
+  /*      if () { //<--- Not Completed, Check Later On
+            gameState.gameCondition = 'win'
+            return
+        } else if (!gameState.gameBoard === '') {
+            gameState.gameCondition = 'draw'
+        } */
     }
 }
 //----------------------------------------------------------------------------------------------------------------------------------
