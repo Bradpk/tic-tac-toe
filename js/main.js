@@ -39,7 +39,11 @@ for (let i=0; i < 9; i++) {
 
 // Creates the paragraph that indicates the game result
 const gameResultParagraph = document.createElement('p')
-gameResultParagraph.textContent = '' //<--- Needs to display who won later on
+if (gameState.gamecondition === 'win') {
+    gameResultParagraph.textContent = `Player ${gameState.playerTurn} wins!` //<--- Check this later
+} else if (gameState.gamecondition === 'draw') {
+    gameResultParagraph.textContent = 'It\'s a draw!'
+}
 app.appendChild(gameResultParagraph)
 
 // Creates the Reset Button
@@ -84,7 +88,7 @@ function checkCondition() {
 //    [0,4,9],[2,4,6]
 // ]
 // for(let i = 0; i < winningCombinations.length; i++) {
-// Some kind of IF statement goes next
+//  const combinations = winningCombinations[i]
 // }
 }
 //----------------------------------------------------------------------------------------------------------------------------------
