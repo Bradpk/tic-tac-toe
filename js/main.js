@@ -1,13 +1,13 @@
 // Testing JavaScript
 console.log("Test")
-//-----------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------
 // Stores player turn, tile content and game condition as object properties
 let gameState = {
     playerTurn: 'X',
     gameBoard: ['', '', '', '', '', '', '', '', ''],
     gameCondition: 'incomplete'
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------
 // Creates and renders all the HTML elements needed
 function renderElements() {
     const app = document.getElementById('app')
@@ -52,7 +52,7 @@ function renderElements() {
     resetButton.addEventListener('click', initGame)
     app.appendChild(resetButton)
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------
 // Sets the initial state of the game 
 function initGame() {
     gameState.playerTurn = 'X'
@@ -60,17 +60,17 @@ function initGame() {
     gameState.gameCondition = 'incomplete'
     renderElements()
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------
 // Controls what happens when you click on the tiles
 function clickAction(tileIndex) {
     if (gameState.gameBoard[tileIndex] === '' && gameState.gameCondition === 'incomplete') {
         gameState.gameBoard[tileIndex] = gameState.playerTurn
         checkCondition()
-        switchPlayer()
         renderElements()
+        switchPlayer()
     }
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------
 // Switches the player symbol. 
 function switchPlayer() {
     if (gameState.playerTurn === 'X') {
@@ -79,24 +79,26 @@ function switchPlayer() {
         gameState.playerTurn = 'X'
     }
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------
 // Checks whether game is a win, draw or incomplete (Congrats you suck)
 function checkCondition() { //
     const winningCombinations = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],
         [0, 3, 6], [1, 4, 7], [2, 5, 8],
-        [0, 4, 9], [2, 4, 6]
+        [0, 4, 8], [2, 4, 6]
     ]
     for (let i = 0; i < winningCombinations.length; i++) {
-        const combinations = winningCombinations[i]
-  /*      if () { //<--- Not Completed, Check Later On (Needs to check the gameboard is equal with the winning combinations)
+        const [a, b, c] = winningCombinations[i]
+        if (gameState.gameBoard[a] === gameState.gameBoard[b] &&
+            gameState.gameBoard[b] === gameState.gameBoard[c] &&
+            gameState.gameBoard[a] !== ''
+        ) {
             gameState.gameCondition = 'win'
-            return
-        } else if (!gameState.gameBoard === '') {
+            
+        } else if (!gameState.gameBoard.includes('')) {
             gameState.gameCondition = 'draw'
-        } */
+        }
     }
 }
-//-----------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------
 initGame()
-
