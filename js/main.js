@@ -37,7 +37,7 @@ function renderElements() {
     // Creates 3 columns in each row
     for (let j = 0; j < 3; j++) {
         const tile = document.createElement('div')
-        tile.className = 'col-4 border'
+        tile.className = 'col-4'
         tile.textContent = gameState.gameBoard[i * 3 + j] // Calculate the index based on row and column
         tile.addEventListener('click', () => clickAction(i * 3 + j))
         rowDiv.appendChild(tile)
