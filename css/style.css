@@ -11,6 +11,7 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 10px solid rgb(38, 255, 0);
 }
 
 .col-4 {
