@@ -4,6 +4,9 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
 }
 
 #app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 1%;
     text-align: center;
 }
