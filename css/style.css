@@ -4,9 +4,6 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
 }
 
 #app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 1%;
     text-align: center;
 }
@@ -17,7 +14,6 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
     font-size: 130px;
     border: 2px solid rgb(0, 0, 50);
     cursor: pointer;
-    margin: 0 auto; 
 }
 
 
