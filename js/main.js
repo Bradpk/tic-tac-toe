@@ -28,20 +28,21 @@ function renderElements() {
     containerDiv.classList.add('container')
     app.appendChild(containerDiv)
 
-    // Creates a div with a class of 'row' inside the container
-    const tileContainer = document.createElement('div')
-    tileContainer.classList.add('row')
-    containerDiv.appendChild(tileContainer)
+  // Creates 3 rows
+  for (let i = 0; i < 3; i++) {
+    const rowDiv = document.createElement('div')
+    rowDiv.classList.add('row')
+    containerDiv.appendChild(rowDiv)
 
-    // Creates the 9 tiles that make up the gameboard
-    for (let i = 0; i < 9; i++) {
+    // Creates 3 columns in each row
+    for (let j = 0; j < 3; j++) {
         const tile = document.createElement('div')
-        tile.className = 'col-4'
-        tile.textContent = gameState.gameBoard[i]
-        tile.addEventListener('click', () => clickAction(i))
-        tileContainer.appendChild(tile)
+        tile.className = 'col-4 border'
+        tile.textContent = gameState.gameBoard[i * 3 + j] // Calculate the index based on row and column
+        tile.addEventListener('click', () => clickAction(i * 3 + j))
+        rowDiv.appendChild(tile)
     }
-
+}
     // Creates the paragraph that indicates the game result
     const gameResultParagraph = document.createElement('p')
     if (gameState.gameCondition === 'win') { //<---Check this section later. win and draw not defined yet
