@@ -23,10 +23,15 @@ function renderElements() {
     playerTurnParagraph.textContent = `Player ${gameState.playerTurn} 's Turn`
     app.appendChild(playerTurnParagraph)
 
-    // Creates a div with a class of 'row' 
+    // Creates a div with a class of 'container' for the row
+    const containerDiv = document.createElement('div')
+    containerDiv.classList.add('container')
+    app.appendChild(containerDiv)
+
+    // Creates a div with a class of 'row' inside the container
     const tileContainer = document.createElement('div')
     tileContainer.classList.add('row')
-    app.appendChild(tileContainer)
+    containerDiv.appendChild(tileContainer)
 
     // Creates the 9 tiles that make up the gameboard
     for (let i = 0; i < 9; i++) {
