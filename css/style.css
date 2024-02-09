@@ -4,14 +4,16 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
 }
 
 #app {
-    width: 100vw;
-    height: 100vh;
-    margin: 2%;
+    margin: 1%;
     text-align: center;
+    border: 10px solid rgb(38, 255, 0);
+}
+
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 10px solid rgb(38, 255, 0);
+    border: 10px solid rgb(255, 0, 0);
 }
 
 .col-4 {
