@@ -44,11 +44,11 @@ function renderElements() {
         }
     }
     // Creates the paragraph that indicates the game result
-    const gameResultParagraph = document.createElement('p')
+    const gameResultParagraph = document.createElement('h6')
     if (gameState.gameCondition === 'win') { //<---Check this section later. win and draw not defined yet
-        gameResultParagraph.textContent = `Player ${gameState.playerTurn} wins!`
+        gameResultParagraph.textContent = `Player ${gameState.playerTurn} Wins!`
     } else if (gameState.gameCondition === 'draw') {
-        gameResultParagraph.textContent = 'It\'s a draw!'
+        gameResultParagraph.textContent = 'It\'s A Draw!'
     }
     app.appendChild(gameResultParagraph)
 
@@ -77,19 +77,20 @@ function clickAction(tileIndex) {
     }
 }
 //----------------------------------------------------------------------------------------------------------------------------------
-// Switches the player symbol. 
+// Switches the player symbol
 function switchPlayer() {
-    switch (gameState.gameCondition) {
-        case 'incomplete':
-            gameState.playerTurn = gameState.playerTurn === 'X' ? 'O' : 'X';
-            break;
-        case 'win':
-        default:
-            break;
+    if (gameState.playerTurn === 'X' && gameState.gameCondition === 'incomplete') {
+        gameState.playerTurn = 'O'
+    } else if (gameState.playerTurn === 'X' && gameState.gameCondition === 'win') {
+        gameState.playerTurn = 'X'
+    } else if (gameState.playerTurn === 'O' && gameState.gameCondition === 'win') {
+        gameState.playerTurn = 'O'
+    } else {
+        gameState.playerTurn = 'X'
     }
 }
 //----------------------------------------------------------------------------------------------------------------------------------
-// Checks whether game is a win, draw or incomplete (Congrats you suck)
+// Checks whether game is a win, draw or incomplete 
 function checkCondition() { //
     const winningCombinations = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -103,6 +104,7 @@ function checkCondition() { //
             gameState.gameBoard[a] !== ''
         ) {
             gameState.gameCondition = 'win'
+            break
 
         } else if (!gameState.gameBoard.includes('')) {
             gameState.gameCondition = 'draw'
