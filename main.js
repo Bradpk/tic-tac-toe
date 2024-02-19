@@ -28,21 +28,21 @@ function renderElements() {
     containerDiv.classList.add('container')
     app.appendChild(containerDiv)
 
-  // Creates 3 rows
-  for (let i = 0; i < 3; i++) {
-    const rowDiv = document.createElement('div')
-    rowDiv.classList.add('row')
-    containerDiv.appendChild(rowDiv)
+    // Creates 3 rows
+    for (let i = 0; i < 3; i++) {
+        const rowDiv = document.createElement('div')
+        rowDiv.classList.add('row')
+        containerDiv.appendChild(rowDiv)
 
-    // Creates 3 columns in each row
-    for (let j = 0; j < 3; j++) {
-        const tile = document.createElement('div')
-        tile.className = 'col-4'
-        tile.textContent = gameState.gameBoard[i * 3 + j] // Calculate the index based on row and column
-        tile.addEventListener('click', () => clickAction(i * 3 + j))
-        rowDiv.appendChild(tile)
+        // Creates 3 columns in each row
+        for (let j = 0; j < 3; j++) {
+            const tile = document.createElement('div')
+            tile.className = 'col-4'
+            tile.textContent = gameState.gameBoard[i * 3 + j] // Calculate the index based on row and column
+            tile.addEventListener('click', () => clickAction(i * 3 + j))
+            rowDiv.appendChild(tile)
+        }
     }
-}
     // Creates the paragraph that indicates the game result
     const gameResultParagraph = document.createElement('p')
     if (gameState.gameCondition === 'win') { //<---Check this section later. win and draw not defined yet
@@ -72,17 +72,20 @@ function clickAction(tileIndex) {
     if (gameState.gameBoard[tileIndex] === '' && gameState.gameCondition === 'incomplete') {
         gameState.gameBoard[tileIndex] = gameState.playerTurn
         checkCondition()
-        renderElements()
         switchPlayer()
+        renderElements()
     }
 }
 //----------------------------------------------------------------------------------------------------------------------------------
 // Switches the player symbol. 
 function switchPlayer() {
-    if (gameState.playerTurn === 'X') {
-        gameState.playerTurn = 'O'
-    } else {
-        gameState.playerTurn = 'X'
+    switch (gameState.gameCondition) {
+        case 'incomplete':
+            gameState.playerTurn = gameState.playerTurn === 'X' ? 'O' : 'X';
+            break;
+        case 'win':
+        default:
+            break;
     }
 }
 //----------------------------------------------------------------------------------------------------------------------------------
@@ -100,7 +103,7 @@ function checkCondition() { //
             gameState.gameBoard[a] !== ''
         ) {
             gameState.gameCondition = 'win'
-            
+
         } else if (!gameState.gameBoard.includes('')) {
             gameState.gameCondition = 'draw'
         }
