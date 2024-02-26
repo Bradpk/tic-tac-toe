@@ -6,4 +6,5 @@ This project is an emulation of the classic Tic Tac Toe game. It allows two play
 
 JavaScript, 
 HTML, 
-CSS
+CSS,
+Bootstrap
