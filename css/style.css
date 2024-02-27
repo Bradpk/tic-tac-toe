@@ -48,3 +48,14 @@ button{
 h6 {
     margin-top: 10px;
 }
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
